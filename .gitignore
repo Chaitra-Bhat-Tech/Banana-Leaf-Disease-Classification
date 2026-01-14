@@ -1,0 +1,56 @@
+# =========================
+# Python cache & compiled files
+# =========================
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# =========================
+# Virtual environments
+# =========================
+venv/
+env/
+.venv/
+
+# =========================
+# Jupyter Notebook
+# =========================
+.ipynb_checkpoints/
+
+# =========================
+# VS Code
+# =========================
+.vscode/
+
+# =========================
+# OS files
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# Dataset (IMPORTANT)
+# =========================
+dataset/
+data/
+
+# =========================
+# Trained models / weights (LARGE FILES)
+# =========================
+models/*.h5
+models/*.pt
+models/*.pth
+models/*.ckpt
+models/*.pb
+
+# =========================
+# Logs & temp files
+# =========================
+logs/
+*.log
+
+# =========================
+# Environment variables
+# =========================
+.env

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Banana Disease Classification</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Banana Disease Classification</h1>
+    </header>
+
+    <main>
+      <form action="/" method="post" enctype="multipart/form-data">
+        <br>
+        <div class="upload-section">
+          <input type="file" name="image" accept="image/*" required>
+          <button type="submit">Upload & Predict</button>
+        </div>
+      </form>
+
+      {% if predictions %}
+      <div class="result-section">
+        <img src="{{ image_url }}" alt="Uploaded Image" class="preview">
+        <div class="predictions">
+          <h2>Model Predictions</h2>
+          <ul>
+            {% for model, pred in predictions.items() %}
+            <li><strong>{{ loop.index }}) {{ model }}</strong> predicted:
+              <em>{{ pred.label }}</em> | Confidence: {{ pred.confidence }}%
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+      {% endif %}
+    </main>
+  </div>
+</body>
+</html>
